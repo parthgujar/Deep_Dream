@@ -10,7 +10,7 @@ import zipfile
 def main():
     #Step 1 - download google's pre-trained neural network
     url = 'https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip'
-    data_dir = '../data/'
+    data_dir = './data/'
     model_name = os.path.split(url)[-1]
     local_zip_file = os.path.join(data_dir, model_name)
     if not os.path.exists(local_zip_file):
@@ -175,11 +175,11 @@ def main():
     channel = 139 # picking some feature channel to visualize
     
     #open image
-    img0 = PIL.Image.open('pilatus800.jpg')
+    img0 = PIL.Image.open('a.jpg')
     img0 = np.float32(img0)
      
     #Step 4 - Apply gradient ascent to that layer
     render_deepdream(tf.square(T('mixed4c')), img0)
       
 if __name__ == '__main__':
-main()
+	main()
